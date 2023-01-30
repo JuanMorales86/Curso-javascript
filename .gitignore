@@ -1,11 +1,9 @@
-test/
-node_modules/
-/pages/technicalServices.html
-/pages/menubootstrap.html
-/pages/pruebas.html
+/node_modules/
 /pages/styleprueba.css
 /assets/js/pruebasjs.js
+/pages/
 package-lock.json
+
 
 
 
