@@ -12,3 +12,7 @@ p{
     text-align: center;
     text-decoration:solid;
 }
+
+img{
+    color: adjust-color($color: #000000, $red: 1, $green: 2, $blue: 3, $hue: 0, $saturation: 0%, $lightness: 0%, $alpha: 1.0);
+}
