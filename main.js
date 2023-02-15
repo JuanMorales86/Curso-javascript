@@ -1,58 +1,93 @@
 //SOCIOS:
 
 //Funcion para crear los productos con sus precios
-function productos (tipo){
+function productos(tipo){
+    let precio;
     switch(tipo){
-        case 'combo1':
-            return price = 15;
-            break;
-        case `combo2`:
-            return price = 21
-        case `combo3`:
-            return price = 80
-        case `birra`:
-            return price = 10
-        case `gomitas`:
-            return price = 5
-        case `chicles`:
-            return price = 2
-        case `caramelos`:
-            return price = 1
+        case 1:
+            precio = 15;
+            break
+        case 2:
+            precio = 21
+            break
+        case 3:
+            precio = 80
+            break
+        case 4:
+            precio = 10
+            break
+        case 5:
+            precio = 5
+            break
+        case 6:
+            precio = 2
+            break
+        case 7:
+            precio = 1
+            break
     }
-}
+    return precio;
 
-alert('Los combos del dia son: 1) combo1: pochoclos + gaseosa. 2) combo2: pochoclos + gaseosa + chocolate. 3) combo3: 2x pochoclos + 2x gaseosa + chocolate + gomitas.')
-alert('por unidad solo: gomitas | birra | caramelos | chicles')
 
-//Hago las preguntas estrictas
-let selection = prompt(`Elija su combo, recuerde ingresar solo: combo1,combo2,combo3,gomitas o birra`).toLowerCase()
-let selection2 = prompt(`Quiere algo mas?`).toLowerCase()
-
-//Compruebo si escoge algo o no
-if ((selection != 0) || (selection2 != 0)){
-    alert(`Su seleccion es: ${selection}`+ ` 🔶🍿🍭🎦🔶` +`${selection2}`);
-// }else if((selection = undefined)&&(selection2 = undefined)){
-//     alert(`Su seleccion es: ${selection} ${selection2}` + `Escogido`);
-//     selection = 0;
-//     selection2 = 0;
-
-}else{
-    alert(`Su seleccion es: ${selection} ${selection2}` + `No escogio nada`);
-    // selection2 = 0
-    // selection = 0
     
 }
+let numb = 2
+let valor = productos(numb)
+console.log(valor);
+
+function showstock(){//una mejora de los alerts que tenia
+    const producto = prompt(
+`Los combos del dia son: 
+1) combo1: pochoclos + gaseosa. 
+2) combo2: pochoclos + gaseosa + chocolate. 
+3) combo3: 2x pochoclos + 2x gaseosa + chocolate + gomitas.
+
+Nota: "Ingresar SOLO numeros dle 1 al 3"
+`);
+
+        const producto2 = prompt(
+        `Por unidad solo: 
+        4) gomitas 
+        5) birra
+        6) caramelos
+        7) chicles
+        Nota: "Ingresar SOLO numeros dle 4 al 7"`)
+        
+
+    // let selection2 = prompt(`Quiere algo mas?`).toLowerCase()
+
+    productprocess(producto,producto2)//llamo la funcion productprocess para correrla ya que tengo las dos variables llenas
+    console.log(producto);
+    console.log(producto2);
+
+    productos(producto)
+    productos(producto2)
+    console.log(`El resultado es `+ productos(producto))
+   
+}
 
 
-let choose = productos(selection)
-console.log(choose);//prueba
+function productprocess(producto,producto2){
+    //Compruebo si escoge algo o no
+if (((producto != 0)) || ((producto2 !=0))) {
+    alert(`Su seleccion es: Item: ${producto} Item: ${producto2}`+ ` 🔶🍿🍭🎦🔶`);
+    selecto = producto, producto2//confirmarsocio(total)
+}else{
+    alert(`No escogio nada`);
+    showstock();
+    
+}
+}
+   
+alert (showstock())
 
-let choosee = productos(selection2)
-console.log(choosee);//prueba
+
+
+
 
 
 //Hago la comparacion aqui del producto con la seleccion
-let cliente = prompt(`Usted es afiliado?`).toUpperCase();
+//let cliente = prompt(`Usted es afiliado?`).toUpperCase();
 let resto
 let totaldesc
 
