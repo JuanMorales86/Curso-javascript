@@ -1,12 +1,146 @@
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: 'sans-serif';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/SFProDisplay-Regular.ttf) format("truetype"); }
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   list-style-type: none; }
 
-p {
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5; }
+
+@media (min-width: 768px) {
+  .navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); }
+  nav.navbar {
+    background-color: #ADC5CF !important;
+    font-family: 'SF Pro Display', sans-serif;
+    font-style: normal;
+    font-weight: bold; }
+  .nav-item {
+    padding: 25px; }
+  .nav-item:hover a {
+    color: blue; } }
+
+.grid-container-m {
+  display: grid;
+  gap: 1.5rem;
+  grid-auto-columns: 1fr;
+  text-align: center;
+  grid-template-areas: 'one' 'two' 'three' 'four' 'five' 'six';
+  margin: 5px 0;
+  padding-block: 4rem;
+  margin-inline: auto;
+  width: 95%;
+  max-width: 70rem;
+  background-color: #4cb2e1; }
+  .grid-container-m .grid-item > h1 {
+    font-size: 900;
+    font-weight: bolt;
+    place-items: center; }
+
+.flip-card {
+  background-color: transparent;
+  width: 190px;
+  height: 254px;
+  perspective: 1000px;
+  font-family: sans-serif; }
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0; }
+
+.title-front {
+  position: absolute;
+  left: 25px;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 800; }
+
+.descrip {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 900;
-  color: brown;
+  color: white;
   text-align: center;
-  text-decoration: solid; }
+  text-decoration: solid;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 40px; }
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d; }
+
+.flip-card:hover .flip-card-inner {
+  transform: rotatey(180deg); }
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 2px solid;
+  border-radius: 1rem;
+  border-image: linear-gradient(315deg, #03a9f4, #ff0058); }
+
+.flip-card-front {
+  background: linear-gradient(120deg, bisque 60%, #ffe7de 88%, #ffd3c3 40%, rgba(255, 127, 80, 0.603) 48%);
+  color: coral; }
+
+.flip-card-front > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1rem; }
+
+.flip-card-back {
+  background: linear-gradient(120deg, #ffae91 30%, coral 88%, bisque 40%, #ffb9a0 78%);
+  color: white;
+  transform: rotateY(180deg); }
+
+form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100vw;
+  height: 100%;
+  margin-top: 100px; }
+
+.button {
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  border: 2px solid #4caf50;
+  font-size: 1rem;
+  transition: 0.4s;
+  width: 9rem; }
+
+.button:hover {
+  font-size: 2rem;
+  width: 18rem;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer; }
