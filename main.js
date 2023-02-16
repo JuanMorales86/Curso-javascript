@@ -71,19 +71,18 @@ if (((producto != 0)) || ((producto2 !=0)) || ((socio !=""))) {
     console.log(`Su seleccion es: Combo: ${producto} Unidad: ${producto2}`+ ` 🔶🍿🍭🎦🔶`);
     const val = productos(producto)
     const val2 = productos(producto2)
-    // console.log(val)//prueba para calculo
-    // console.log(val2)//prueba para calculo
+   
     let total = calculo(val,val2)
-    console.log(total);//prueba suma de calculo
+    
     let porc5 = desc5(total)
-    // console.log(porc5);//prueba porcentaje de calculo
+    
     let usuario = afiliado(socio,total,porc5)
-    console.log(usuario);//prueba porcentaje de calculo
+    
     const desicion = function (a,b) {if (a < b){return a}else{return b}}
     let resultado = Number(desicion(usuario,total))
-    console.log(resultado);
+    
    
-    console.log("El monto a abonar de sus productos es de: "+resultado)
+    alert("El monto a abonar de sus productos es de: "+resultado+" USD")
 
 }else{
     alert(`No escogio nada. Se reiniciara la operacion`);
