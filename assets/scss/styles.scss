@@ -20,10 +20,10 @@
 body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
-    line-height: 1.5;
+    line-height: 2;//alto del navbar
   }
 
-@media (min-width:768px){
+@media (min-width:768px){//Navbar begins mediaquery
     .navbar-center{
     position: absolute;
     left: 50%;
@@ -43,39 +43,63 @@ body {
     .nav-item:hover a{
         color: blue;
     }
-}
 
 
-.grid-container-m{//mobile
+
+.grid-container{//mobile
     display: grid;
     gap: 1.5rem;
     grid-auto-columns: 1fr;
     text-align: center;
-    grid-template-areas: 'one'
-    'two'
-    'three'
-    'four'
-    'five'
-    'six';
-margin: 5px 0;
-padding-block: 4rem;//shorthand property that combines the padding-block-start and padding-block-end
+    grid-template-areas: 'header'
+    'main'
+    'footer'
+    ;
+margin: 1px 0;
+padding-block: 0rem;//shorthand property that combines the padding-block-start and padding-block-end (Borde superior y unferior o top and bottom)
 margin-inline: auto;
-width: min(95%);
+width: min(99%);//controller for ancho del contenedor completo
 max-width: 70rem;
-background-color: #4cb2e1;
+background-color: #6ba0b9;
 
-.grid-item>h1{
-    font-size:900;
-    font-weight: bolt;
-    place-items: center;
+.card{
+    width: 20rem;
+    
+    
 }
 
+.card-body{
+    background-color: #64798C;
+    color: white;
+    font-family: 'SF Pro Display', sans-serif;
+}
 
+.card-img-top{//imagen
+    
+    height: 200px;
+    border-top: solid 5px #ff0058;
+    border-bottom: solid 3px #ff0058;
+    place-items: center;
+    
+}
+
+.card-title{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.card-text{
+    text-align: justify;
+}
+
+}//grid-container ends
+
+}//navbar ends mediaquery
 
     // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
    
     // grid-auto-flow: column;//los acomoda 
-}
+
     // @media(min-width: 50em){//con media querys 50em es igual a 800px
     //     .grid-container-m{
             
