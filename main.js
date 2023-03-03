@@ -40,34 +40,48 @@ class Backpack{
 
 
 function settlementsA(position){
-let foodconsumption
-let woodconsumption
-let yescaconsumption
-let waterconsumption
-let enduranceconsumption
+let post
+
+
 switch(position){
     case 1:
-    foodconsumption = 20
-    woodconsumption = 15
-    yescaconsumption = 10
-    waterconsumption = 20
-    enduranceconsumption = 100
+
+    post = {foodconsumption: 20,
+        woodconsumption: 15,
+        yescaconsumption: 10,
+        waterconsumption: 20,
+        enduranceconsumption: 100}
+        for(const recovery in post){//CICLO FOR IN
+            let algo = recovery;
+            let algo2 = post[recovery]
+            console.log(algo2);
+            console.log(algo);  
+            adquire.push(algo2)
+        
+            // spin(algo2, (el) =>{
+        //         adquire.push(el)})
+           
+        }
+        
+        
     break
     case 2:
-        foodconsumption = 30
-        woodconsumption = 15
-        yescaconsumption = 10
-        waterconsumption = 50
-        enduranceconsumption = 200
+    post = [foodconsumption = 30,
+        woodconsumption = 15,
+        yescaconsumption = 10,
+        waterconsumption = 50,
+        enduranceconsumption = 200]
         break
-}return foodconsumption, 
-            woodconsumption, 
-                yescaconsumption,
-                    waterconsumption,
-                        enduranceconsumption
-
+}return post
+                        
 }
 
+function spin(arr,fn){
+    for(const el of arr){
+    fn(el)}}
+
+const adquire = []
+console.log(adquire)
 
 const Juagador1 = new Backpack(20, 40, 1, 1, 50, 20, 1, 1, 1, 1);
 
@@ -93,14 +107,25 @@ adventure(desition,Juagador1)
 
 }
 
-function adventure(desition,Juagador1){
+function adventure(desition,Jugador1){
   
     if(desition == "A" ){
         console.log(desition);
         console.log(`Tu viaje sale de la base hacia el yermo Super Frio.Llegaras el primer asentamiento hacia la ruta ${desition}`)
+    let obtain = settlementsA(1)
+    console.log(obtain)
+    // for (const num of obtain){
+    //     let result = num.obtain
+    //     console.log(result)
+    // }
+    }else if(desition == "B"){
+        console.log(desition);
+        console.log(`Tu viaje sale de la base hacia el yermo Super Frio.Llegaras el primer asentamiento hacia la ruta ${desition}`)
     let obtain = settlementsA(2)
     console.log(obtain)
-        
+    
+    
+       
     
     
     
@@ -108,7 +133,7 @@ function adventure(desition,Juagador1){
     
     
     }else{
-    console.log(`no ingreso nada ${Juagador1}`)
+    console.log(`no ingreso nada ${Jugador1.food}`)
 
 
 }
