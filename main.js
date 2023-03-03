@@ -22,7 +22,7 @@ class Backpack{
         this.gasstove  = gasstove;
         this.knive  = knive;
         this.shovel  = shovel;
-        this.check = function(){console.log(`En tu mochila cargas estos Items: Unidades
+        this.check = function(){console.log(`En tu mochila cargas estos Items: 😶‍🌫️ Unidades
         Alimento: ${this.food} Unidades
         Burjula: ${this.compass} Unidades
         Madera: ${this.wood} Unidades
@@ -53,8 +53,14 @@ switch(position){
     waterconsumption = 20
     enduranceconsumption = 100
     break
-}
-return foodconsumption, 
+    case 2:
+        foodconsumption = 30
+        woodconsumption = 15
+        yescaconsumption = 10
+        waterconsumption = 50
+        enduranceconsumption = 200
+        break
+}return foodconsumption, 
             woodconsumption, 
                 yescaconsumption,
                     waterconsumption,
@@ -82,18 +88,27 @@ Nota:"Ingrese solo las letras A,B O C"
 `).toUpperCase());
 
 //console.log(desition);
-adventure(desition)
+adventure(desition,Juagador1)
 
 
 }
 
-function adventure(Juagador1,desition){
+function adventure(desition,Juagador1){
   
     if(desition == "A" ){
         console.log(desition);
         console.log(`Tu viaje sale de la base hacia el yermo Super Frio.Llegaras el primer asentamiento hacia la ruta ${desition}`)
+    let obtain = settlementsA(2)
+    console.log(obtain)
+        
+    
+    
+    
+    
+    
+    
     }else{
-    console.log(`no ingreso nada`)
+    console.log(`no ingreso nada ${Juagador1}`)
 
 
 }
