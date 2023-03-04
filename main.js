@@ -37,7 +37,7 @@ class Backpack{
     
     
     
-    const Jugador1 = new Backpack(200,300,100,200,500);
+    const Jugador1 = new Backpack(500,500,500,500,500);
     
     Jugador1.check();
     
@@ -52,8 +52,8 @@ class Backpack{
         return subtract;
     }
     
-    journeyManagement(Jugador1,adquire)
-    console.log();
+    console.log(journeyManagement(Jugador1,adquire))
+  
 
     questions1();
     
@@ -78,6 +78,14 @@ class Backpack{
             console.log(`Tu viaje sale de la base hacia el yermo Super Frio.Llegaras el primer asentamiento hacia la ruta ${desition}`)
         let obtain = settlementsA(1)
         console.log(obtain)
+        let obtain2 = settlementsA(2)
+        console.log(obtain2)
+        let obtain3 = settlementsA(3)
+        console.log(obtain3)
+        let obtain4 = settlementsA(4)
+        console.log(obtain4)
+
+
         // for (const num of obtain){
         //     let result = num.obtain
         //     console.log(result)
@@ -103,22 +111,17 @@ class Backpack{
     }
     }
 
-
-
-
-
-
 function settlementsA(position){
 let post
 
 switch(position){
     case 1:
 
-    post = {foodconsumption: 20,
-        woodconsumption: 15,
-        yescaconsumption: 10,
-        waterconsumption: 20,
-        enduranceconsumption: 100}
+    post =[foodconsumption= 20,
+        woodconsumption= 15,
+        yescaconsumption= 10,
+        waterconsumption= 20,
+        enduranceconsumption= 100]
         for(const recovery in post){//CICLO FOR IN
             let slot2 = recovery;
             let slot3 = post[recovery]
@@ -130,7 +133,31 @@ switch(position){
         woodconsumption = 15,
         yescaconsumption = 10,
         waterconsumption = 50,
-        enduranceconsumption = 200]
+        enduranceconsumption = 100]
+        for(const recovery in post){//CICLO FOR IN
+            let slot2 = recovery;
+            let slot3 = post[recovery]
+            adquire.push(slot3)   
+        }   
+        break
+        case 3:
+    post = [foodconsumption = 40,
+        woodconsumption = 25,
+        yescaconsumption = 20,
+        waterconsumption = 50,
+        enduranceconsumption = 100]
+        for(const recovery in post){//CICLO FOR IN
+            let slot2 = recovery;
+            let slot3 = post[recovery]
+            adquire.push(slot3)   
+        }   
+        break
+        case 4:
+    post = [foodconsumption = 50,
+        woodconsumption = 35,
+        yescaconsumption = 30,
+        waterconsumption = 50,
+        enduranceconsumption = 100]
         for(const recovery in post){//CICLO FOR IN
             let slot2 = recovery;
             let slot3 = post[recovery]
