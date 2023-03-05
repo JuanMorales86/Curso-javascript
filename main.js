@@ -74,7 +74,10 @@ class Backpack{
         
     }
 
-   
+   // let rest = function(a,b){ for(let i = 0; i < a.length; i++){
+            //     a[i] = a[i] - b[i]}}
+            // let algo = rest(record, result)
+            // console.log(algo)
 
     questions1();
     
@@ -104,23 +107,20 @@ class Backpack{
             console.log(desition);
             console.log(`Tu viaje sale de la base hacia el yermo Super Frio.Llegaras el primer asentamiento hacia la ruta ${desition}`)
         console.log(`Llegaste al primer asentamiento el consumo de recursos es de: ${post(100,40,20,50,60)}`)
-            // let again = post(Jugador1.food, Jugador1.wood, Jugador1.yesca, Jugador1.water, Jugador1.endurance)
-            // console.log(again)
-            let record = Jugador1.see()
-            console.log(record)
-            let result = post(100,40,20,50,60)
-            // let rest = function(a,b){ for(let i = 0; i < a.length; i++){
-            //     a[i] = a[i] - b[i]}}
-            // let algo = rest(record, result)
-            // console.log(algo)
-            for(const el in record){//sirvio
-                let algo = record[el]
-                let algo2 = result[el]
-                Jugador1 = algo - algo2
-                console.log(algo - algo2)
-            }
-     
+            let convert = Jugador1.see()//convierto el jugador1 a array de nuevo por q no me lolee simplemente colocando jugador1
+            console.log(convert)
+            let post1 = post(100,40,20,50,60)
             
+            const substrac = function(items,items2){for(const el in items){//sirvio
+                let a1 = items[el]
+                let a2 = items2[el]
+                Jugador1 = a1 - a2
+                console.log(a1 - a2)
+            }}
+            
+            Jugador1 = new Backpack(substrac(convert,post1))
+            let este = Jugador1.see()
+            console.log(este)
             // let obtain = new adquire(settlementsA(1))        
         }else{
         console.log(`no ingreso nada ${Jugador1}`)
