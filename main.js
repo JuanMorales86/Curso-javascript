@@ -119,8 +119,7 @@ class Backpack{
                 Jugador1 = algo - algo2
                 console.log(algo - algo2)
             }
-            let record2 = Jugador1.see()
-            console.log(record2)
+     
             
             // let obtain = new adquire(settlementsA(1))        
         }else{
