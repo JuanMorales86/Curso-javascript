@@ -1,15 +1,28 @@
 //!Segunda Entrega --- Juego Frio  --- 
+//Historia Creada
 console.log(`Inicia tu viaje hacia un campamento con temperaturas invernales de -20 grados y bajando a maximas de -90 grados bajo cero,  dependiendo de tu ruta se emplearan mas objetos o menos objetos segun la seleccion.
 Necesitaras llegar hasta el campamento para averiguar si el ultimo bastion de la humanidad sigue en pie en este mundo que se a convertido en un congelador gigantesco`)
 
 
 console.log(`Tienes Adelante un viaje con tres rutas diferentes cada ruta representa un desgaste en tu inventario y en tu salud total, a lo largo del viaje podras encontrar objetos que te ayudaran a sobrevivir hasta el final`)
 
+
+
 let Life = 100
 let Keepgoing = true
 
+// class adquire{
+//     constructor(){
+//         this.obtain = []
+// }
+// }
+
 const adquire = []
-console.log(adquire)
+
+
+        
+
+
 
 class Backpack{
     constructor(food, wood, yesca, water, endurance) {
@@ -25,35 +38,43 @@ class Backpack{
         Agua Embotellada: ${this.water} Unidades
         Resistencia: ${this.endurance} Unidades
         `)}
-    
+       this.see = function(){return [this.food,this.wood,this.yesca,this.water,this.endurance]}
     }}
-
-
-
-
-    function spin(arr,fn){
-        for(const el of arr){
-        fn(el)}}
-    
-    
-    
-    const Jugador1 = new Backpack(500,500,500,500,500);
-    
+    const Jugador1 = new Backpack(900,900,900,900,900);
+    const Jugador2 = new Backpack(400,200,150,600,1000);
     Jugador1.check();
-    
-    function journeyManagement(arr1,arr2){
-        let subtract = 0;
+    Jugador2.check();
 
-        for(let i = 0; i < arr1.lenght + arr2.lenght; i++){
-        if(i < arr1.lenght){
-            subtract = subtract - arr1[i]
-        }else subtract = subtract - arr2[i - arr1.lenght]
-        }
-        return subtract;
+    // const Runpost = [new Backpack(100,40,20,50,60,1),
+    //                 new Backpack(150,80,40,100,120.2),
+    //                 new Backpack(200,160,80,150,200,3),
+    //                 new Backpack(250,210,160,200,300,4)]
+
+    function post(){
+        return Array.from(arguments);
     }
+
+
+
+    // const post1 = new Backpack(100,40,20,50,60)
+    // const post2 = new Backpack(150,80,40,100,120)
+    // const post3 = new Backpack(200,160,80,150,200)
+    // const post4 = new Backpack(250,210,160,200,300)
+
+
+    // function spin(arr,fn){
+    //     for(const el of arr){
+    //     fn(el)}}
+
+      
     
-    console.log(journeyManagement(Jugador1,adquire))
-  
+    function journeyManagement(arr,arr2){
+            for(let i = 0; i < arr.length; i++){
+            arr[i] = arr[i] - arr2[i]}
+        
+    }
+
+   
 
     questions1();
     
@@ -66,107 +87,50 @@ class Backpack{
     `).toUpperCase());
     
     //console.log(desition);
+
+
+
+
     adventure(desition,Jugador1)
     
     
     }
 
+
+
     function adventure(desition,Jugador1){
-      
+     
         if(desition == "A" ){
             console.log(desition);
             console.log(`Tu viaje sale de la base hacia el yermo Super Frio.Llegaras el primer asentamiento hacia la ruta ${desition}`)
-        let obtain = settlementsA(1)
-        console.log(obtain)
-        let obtain2 = settlementsA(2)
-        console.log(obtain2)
-        let obtain3 = settlementsA(3)
-        console.log(obtain3)
-        let obtain4 = settlementsA(4)
-        console.log(obtain4)
-
-
-        // for (const num of obtain){
-        //     let result = num.obtain
-        //     console.log(result)
-        // }
-        }else if(desition == "B"){
-            console.log(desition);
-            console.log(`Tu viaje sale de la base hacia el yermo Super Frio.Llegaras el primer asentamiento hacia la ruta ${desition}`)
-        let obtain = settlementsA(2)
-        console.log(obtain)
-        
-        
-           
-        
-        
-        
-        
-        
-        
+        console.log(`Llegaste al primer asentamiento el consumo de recursos es de: ${post(100,40,20,50,60)}`)
+            // let again = post(Jugador1.food, Jugador1.wood, Jugador1.yesca, Jugador1.water, Jugador1.endurance)
+            // console.log(again)
+            let record = Jugador1.see()
+            console.log(record)
+            let result = post(100,40,20,50,60)
+            // let rest = function(a,b){ for(let i = 0; i < a.length; i++){
+            //     a[i] = a[i] - b[i]}}
+            // let algo = rest(record, result)
+            // console.log(algo)
+            for(const el in record){//sirvio
+                let algo = record[el]
+                let algo2 = result[el]
+                Jugador1 = algo - algo2
+                console.log(algo - algo2)
+            }
+            let record2 = Jugador1.see()
+            console.log(record2)
+            
+            // let obtain = new adquire(settlementsA(1))        
         }else{
-        console.log(`no ingreso nada ${Jugador1.food}`)
+        console.log(`no ingreso nada ${Jugador1}`)
     
     
     }
     }
-
-function settlementsA(position){
-let post
-
-switch(position){
-    case 1:
-
-    post =[foodconsumption= 20,
-        woodconsumption= 15,
-        yescaconsumption= 10,
-        waterconsumption= 20,
-        enduranceconsumption= 100]
-        for(const recovery in post){//CICLO FOR IN
-            let slot2 = recovery;
-            let slot3 = post[recovery]
-            adquire.push(slot3)   
-        }     
-    break
-    case 2:
-    post = [foodconsumption = 30,
-        woodconsumption = 15,
-        yescaconsumption = 10,
-        waterconsumption = 50,
-        enduranceconsumption = 100]
-        for(const recovery in post){//CICLO FOR IN
-            let slot2 = recovery;
-            let slot3 = post[recovery]
-            adquire.push(slot3)   
-        }   
-        break
-        case 3:
-    post = [foodconsumption = 40,
-        woodconsumption = 25,
-        yescaconsumption = 20,
-        waterconsumption = 50,
-        enduranceconsumption = 100]
-        for(const recovery in post){//CICLO FOR IN
-            let slot2 = recovery;
-            let slot3 = post[recovery]
-            adquire.push(slot3)   
-        }   
-        break
-        case 4:
-    post = [foodconsumption = 50,
-        woodconsumption = 35,
-        yescaconsumption = 30,
-        waterconsumption = 50,
-        enduranceconsumption = 100]
-        for(const recovery in post){//CICLO FOR IN
-            let slot2 = recovery;
-            let slot3 = post[recovery]
-            adquire.push(slot3)   
-        }   
-        break
-}return post
-                        
-}
+   
+                    
 
     
 
