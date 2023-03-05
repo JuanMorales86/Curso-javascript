@@ -45,10 +45,7 @@ class Backpack{
     Jugador1.check();
     Jugador2.check();
 
-    // const Runpost = [new Backpack(100,40,20,50,60,1),
-    //                 new Backpack(150,80,40,100,120.2),
-    //                 new Backpack(200,160,80,150,200,3),
-    //                 new Backpack(250,210,160,200,300,4)]
+ 
 
     function post(){
         return Array.from(arguments);
@@ -109,18 +106,20 @@ class Backpack{
         console.log(`Llegaste al primer asentamiento el consumo de recursos es de: ${post(100,40,20,50,60)}`)
             let convert = Jugador1.see()//convierto el jugador1 a array de nuevo por q no me lolee simplemente colocando jugador1
             console.log(convert)
-            let post1 = post(100,40,20,50,60)
+            const post1 = post(100,40,20,50,60)
+            const post2 = post (150,80,40,100,120)
+            const post4 = post (250,210,160,200,300)
+            const post3 = post (200,160,80,150,200)
             
             const substrac = function(items,items2){for(const el in items){//sirvio
                 let a1 = items[el]
                 let a2 = items2[el]
-                Jugador1 = a1 - a2
-                console.log(a1 - a2)
+                let result = a1 - a2
+                console.log(result)
+                
             }}
-            
-            Jugador1 = new Backpack(substrac(convert,post1))
-            let este = Jugador1.see()
-            console.log(este)
+            let result1 = substrac(convert,post2)
+            console.log(result1)
             // let obtain = new adquire(settlementsA(1))        
         }else{
         console.log(`no ingreso nada ${Jugador1}`)
