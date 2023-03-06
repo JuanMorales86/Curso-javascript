@@ -62,7 +62,7 @@ function journeyManagement2(inputArray) {//Funcion resta entre dos arrays
     Jugador1.water -= inputArray[i][3];
     Jugador1.endurance -= inputArray[i][4];
 
-    const updatedValues = [//Modificar el arrays principal de que contiene a Jugador1
+    const updatedValues = [//LLamar a los valores de jugador1 del array principal y almacenar en esta variable
       Jugador1.food,
       Jugador1.wood,
       Jugador1.yesca,
@@ -105,24 +105,29 @@ function getTotalRemainingValues(resultArray) {
 questions1();
 
 function questions1() {
-  const desition = String(
+  let desition = "";
+  while (desition !== "A" && desition !== "B" && desition !== "C"){
+    desition = 
     prompt(`Elija la ruta que desea tomar:
     Ruta A
     Ruta B
     Ruta C
     Nota:"Ingrese solo las letras A,B O C"
-    `).toUpperCase()
-  );
-
+    `).toUpperCase();
+    if(desition == ""){
+      console.log(`Debe agregar un dato valido`);
+    }
+  }
   adventure(desition);
+
 }
 
 function adventure(desition) {
   let response = ""
   const defaultvalue = "S"
-  let validDecision = false;
+  
 
-do{
+
   if (desition === ""){
     alert("Ingresa una opción valida por favor: (A, B o C):");
     questions1()
@@ -142,7 +147,7 @@ do{
   
       //Llamo a la funcion restar backpack jugador - los post
       const result = journeyManagement2(journeyArray);
-      response = prompt("Quieres Elegir otro camino?--'S'--'N'", defaultvalue).toUpperCase();
+   
 
     } else if (desition == "B") {//Ruta B
       console.log(desition);
@@ -160,7 +165,7 @@ do{
   
       //funcion restar backpack jugador - los post
       const result = journeyManagement2(journeyArray);
-      response = prompt("Quieres Elegir otro camino?--'S'--'N'", defaultvalue).toUpperCase();
+     
     }else if (desition == "C") {//Ruta C
       console.log(desition);
       console.log(
@@ -177,14 +182,25 @@ do{
   
       //funcion restar backpack jugador - los post
       const result = journeyManagement2(journeyArray);
-      response = prompt("Quieres Elegir otro camino?--'S'--'N'", defaultvalue).toUpperCase();
+      
     }  else {
       console.log(
         `no ingreso nada, sigues con la misma cantidad de intems en la mochila ${Jugador1Array}`
       );
     }
 
-}while (response !== "S" && response !== null);
+    response = prompt("Quieres Elegir otro camino?--'S'--'N'", defaultvalue).toUpperCase();
 
-  questions1()
-}
+    if(response === "S"){
+      questions1()
+
+    }else if(response ==="N"){
+      console.log(`Juego Terminado`)
+    }else if(response == ""){
+      console.log(`Error valor vacio`)
+    }
+
+  }
+
+  
+
