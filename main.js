@@ -52,7 +52,6 @@ function transformarr() {//crea un array apartir de un parametro no tiene mucho 
 const Jugador1Array = Jugador1.see();//borralo
 console.log(Jugador1Array);
 
-//3)
 function journeyManagement2(inputArray) {//Funcion resta entre dos arrays
   const resultArray = [];
 
@@ -121,10 +120,13 @@ function questions1() {
 function adventure(desition) {
   let response = ""
   const defaultvalue = "S"
+  let validDecision = false;
 
 do{
-
-    if (desition == "A") {
+  if (desition === ""){
+    alert("Ingresa una opción valida por favor: (A, B o C):");
+    questions1()
+  }else if (desition == "A") {
       console.log(desition);
       console.log(
         `Tu viaje sale de la base hacia el yermo Super Frio.Llegaras el primer asentamiento en direccion de ruta ${desition}`
