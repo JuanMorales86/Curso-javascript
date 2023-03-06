@@ -192,7 +192,19 @@ function adventure(desition) {
     response = prompt("Quieres Elegir otro camino?--'S'--'N'", defaultvalue).toUpperCase();
 
     if(response === "S"){
-      questions1()
+      let checkeo = Jugador1.see()
+      console.log(checkeo)
+      const initialValues = [//LLamar a los valores de jugador1 del array principal y almacenar en esta variable
+      Jugador1.food = 900,
+      Jugador1.wood = 900,
+      Jugador1.yesca = 900,
+      Jugador1.water = 900,
+      Jugador1.endurance = 900,
+    ];
+
+    Jugador1.splice(0,4)
+
+    Jugador1.push(initialValues)
 
     }else if(response ==="N"){
       console.log(`Juego Terminado`)
