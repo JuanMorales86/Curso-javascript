@@ -90,10 +90,18 @@ function journeyManagement2(inputArray) {//Funcion resta entre dos arrays
   return resultArray;
 }
 
-function getTotalRemainingValues(resultArray) {
+function updateJugador1() {//Modificar Jugador1 al final por valores nuevos para comenzar una ruta nueva
+  const newValues = [900, 900, 900, 900, 900]; 
+  const keys = Object.keys(Jugador1);//devuelve una matriz cuyos elementos son cadenas correspondientes a los nombres de propiedades enumerables con clave de cadena que se encuentran directamente en el objeto.
+  keys.forEach((key, index) => {
+    Jugador1[key] = newValues[index];
+  });
+}
+
+function getTotalRemainingValues(resultArray) {//Lo cree pero no lo use
   const totalValues = [0, 0, 0, 0, 0];
 
-  for (let i = 0; i < resultArray.length; i++) {
+  for (let i = 0; i < resultArray.length; i++) {//devuelve el ultimo total de los valores de array resultante en un sola variable
     for (let j = 0; j < 5; j++) {
       totalValues[j] -= resultArray[i][j];
     }
@@ -174,10 +182,10 @@ function adventure(desition) {
   
       //arrays de los asentamientos por donde va a pasar el Jugador1 y a los cuales le voy a restar items
       const journeyArray = [
-        [200, 150, 50, 150, 200],
-        [400, 400, 120, 190, 250],
-        [100, 200, 200, 220, 300],
-        [100, 50, 300, 200, 50],
+        [200, 80, 50, 300, 400],
+        [100, 300, 280, 180, 150],
+        [350, 250, 140, 130, 100],
+        [200, 50, 420, 290, 90],
       ];
   
       //funcion restar backpack jugador - los post
@@ -202,10 +210,11 @@ function adventure(desition) {
       Jugador1.endurance = 900,
     ];
 
-    Jugador1.splice(0, 4, Jugador1.food, Jugador1.wood, Jugador1.yesca, Jugador1.water, Jugador1.endurance);
+    Jugador1Array.splice(0, 4);
 
-    Jugador1.push(initialValues)
-
+    Jugador1Array.push(initialValues)
+    console.log(Jugador1Array)
+    questions1()
     }else if(response ==="N"){
       console.log(`Juego Terminado`)
     }else if(response == ""){
