@@ -202,9 +202,9 @@ function adventure(desition) {
       Jugador1.endurance = 900,
     ];
 
-    Jugador1.splice(0,4)
+    Jugador1.splice(0, 4, 900, 900, 900, 900, 900);
 
-    Jugador1.push(initialValues)
+    //Jugador1.push(initialValues)
 
     }else if(response ==="N"){
       console.log(`Juego Terminado`)
